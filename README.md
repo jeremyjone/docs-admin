@@ -1,4 +1,4 @@
-# JeremyJone 的文档站
+# JeremyJone 的文档站 管理站
 
 本站点使用 vuepress 生成。
 
