@@ -65,6 +65,7 @@ module.exports = {
         // 编辑链接
         repo: "jeremyjone/docs-admin",
         repoLabel: "GitHub",
+        docsDir: "docs",
         editLinks: true,
         editLinkText: "修改此页面",
     },
