@@ -235,40 +235,4 @@ function getWidth() {
 
 ## 具体的语言
 
-每种语言都有自己独特的使用方式。所以《规范》应当针对不同语言具有不同的内容。
-
-### C
-
-使用 <Title msg="C#" /> 书写代码要求。
-
-参看 [具体内容](/standard/csharp/)
-
-### CSS
-
-使用 <Title msg="CSS" /> 书写代码要求。
-
-参看 [具体内容](/standard/css/)
-
-### HTML
-
-使用 <Title msg="HTML" /> 书写代码要求。
-
-参看 [具体内容](/standard/html/)
-
-### JavaScript
-
-使用 <Title msg="JavaScript" /> 书写代码要求。
-
-参看 [具体内容](/standard/javascript/)
-
-### Python
-
-使用 <Title msg="Python" /> 书写代码要求。
-
-参看 [具体内容](/standard/python/)
-
-### Vue
-
-使用 <Title msg="Vue" /> 书写代码要求。
-
-参看 [具体内容](/standard/vue/)
+每种语言都有自己独特的使用方式。所以《规范》应当针对不同语言具有不同的内容。**请记住，任何情况下，具体语言的规范优先级都应该高于通用规范。**
