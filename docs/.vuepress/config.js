@@ -128,6 +128,11 @@ function getDocumentSideBar() {
       title: "Vim 使用文档",
       collapsable: true,
       children: ["vim"]
+    },
+    {
+      title: "JzGantt 组件使用文档",
+      collapsable: true,
+      children: ["gantt/", "gantt/root", "gantt/column", "gantt/slider", "gantt/common"]
     }
   ]
 }
