@@ -68,8 +68,8 @@ const dataList = [
 ```html{2}
 <j-gantt
     data-index="index" <!-- 请确保它存在 -->
-    :data="dataList" />
-</j-gantt>
+    :data="dataList"
+/>
 ```
 
 如上操作之后，您将看到：

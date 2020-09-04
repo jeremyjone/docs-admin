@@ -12,10 +12,11 @@
 
 基于入门的示例，您可以直接这样使用：
 
-```html{4}
+```html{5}
 <j-gantt
     data-index="index"
-    :data="dataList" />
+    :data="dataList"
+>
     <j-gantt-column label="index" />
 </j-gantt>
 ```

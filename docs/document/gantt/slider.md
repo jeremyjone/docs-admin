@@ -18,10 +18,11 @@
 
 基于入门的示例，您现在应该拥有一个列，那么您可以继续这样使用：
 
-```html{5}
+```html{6}
 <j-gantt
     data-index="index"
-    :data="dataList" />
+    :data="dataList"
+>
     <j-gantt-column label="index" />
     <j-gantt-slider bg-color="orange" />
 </j-gantt>
