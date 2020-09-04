@@ -31,7 +31,7 @@
 
 它将显示成如下内容：
 
-![slider-basic.png](/assets/gantt/slider-basic.png)
+<img :src="$withBase('/assets/gantt/slider-basic.png')" alt="slider-basic">
 
 ## 属性
 

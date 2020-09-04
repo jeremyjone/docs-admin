@@ -74,7 +74,7 @@ const dataList = [
 
 如上操作之后，您将看到：
 
-![basic.png](/assets/gantt/basic.png)
+<img :src="$withBase('/assets/gantt/basic.png')" alt="basic">
 
 如果没有，请尝试重新操作。
 

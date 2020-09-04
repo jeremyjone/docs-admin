@@ -22,7 +22,7 @@
 
 它将显示成如下内容：
 
-![column-basic.png](/assets/gantt/column-basic.png)
+<img :src="$withBase('/assets/gantt/column-basic.png')" alt="column-basic">
 
 ## 属性
 

@@ -22,7 +22,7 @@
 
   - 在 Windows 上使用 Git，可以从 Git 官网直接[下载安装程序](https://git-scm.com/downloads)，然后按默认选项安装即可。安装完成后，在开始菜单里找到“Git”->“Git Bash”，蹦出一个类似命令行窗口的东西，就说明 Git 安装成功！
 
-  ![git bash](/assets/pic/bash.png)
+  <img :src="$withBase('/assets/pic/bash.png')" alt="git bash">
 
 - ### Mac OS X
 
@@ -221,11 +221,11 @@ git rebase -i (commit-id)  // commit-id 为提交版本的hash code
 
 **注意：** 这里有个坑，commit-id 是需要删除的前一个 hash code，用图说明：
 
-![rebase](/assets/pic/rebase1.png)
+ <img :src="$withBase('/assets/pic/rebase1.png')" alt="rebase">
 
 使用命令后，打开一个文件，将需要删除版本前面的 pick 改为 drop，用图说明：
 
-![rebase](/assets/pic/rebase2.png)
+ <img :src="$withBase('/assets/pic/rebase2.png')" alt="rebase">
 
 修改后保存关闭，`ZZ` 或者 `:wq`，vim 的命令这里不赘述。
 
