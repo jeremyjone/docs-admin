@@ -1,6 +1,6 @@
 # 入门
 
-<Description author="jeremyjone" version="1.x" date="2020-09-02" copyright="jeremyjone" />
+<Description author="jeremyjone" version="0.0.5" date="2020-09-14" copyright="jeremyjone" />
 
 通过入门的章节内容，可以快速引入并使用 JzGantt。
 
@@ -11,6 +11,10 @@
 ```bash
 npm install jz-gantt --save
 ```
+
+::: tip 提示
+因为处于完善阶段，请确保使用最新版本。
+:::
 
 ## 引入
 
@@ -68,8 +72,8 @@ const dataList = [
 ```html{2}
 <j-gantt
     data-index="index" <!-- 请确保它存在 -->
-    :data="dataList"
-/>
+    :data="dataList" />
+</j-gantt>
 ```
 
 如上操作之后，您将看到：

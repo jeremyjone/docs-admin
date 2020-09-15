@@ -1,6 +1,6 @@
 # 滑块组件 JGanttSlider
 
-<Description author="jeremyjone" version="1.x" date="2020-09-02" copyright="jeremyjone" />
+<Description author="jeremyjone" date="2020-09-02" copyright="jeremyjone" />
 
 因为我们在内部已经将其加载，所以您并不需要显示的再次导入到您的组件中就可以使用。
 
@@ -18,11 +18,10 @@
 
 基于入门的示例，您现在应该拥有一个列，那么您可以继续这样使用：
 
-```html{6}
+```html{5}
 <j-gantt
     data-index="index"
-    :data="dataList"
->
+    :data="dataList" />
     <j-gantt-column label="index" />
     <j-gantt-slider bg-color="orange" />
 </j-gantt>

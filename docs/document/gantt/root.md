@@ -1,6 +1,6 @@
 # 根组件 JGantt
 
-<Description author="jeremyjone" version="1.x" date="2020-09-02" copyright="jeremyjone" />
+<Description author="jeremyjone" date="2020-09-02" copyright="jeremyjone" />
 
 对于 `JGantt` 组件，它具有非常丰富的属性。
 
@@ -19,6 +19,27 @@
 - `startDate` 可以在甘特图中正确渲染数据的起始日期
 - `endDate` 可以在甘特图中正确渲染数据的截止日期
   :::
+
+::: warning 数据的更新和限制
+由于Vue的限制，`Array` 类型和 `Object` 类型不会自动监听到子层级，这导致当您修改子级内容时不会更新视图。
+
+- 您可以使用 `vm.$set()` 的方式。
+- **推荐**：我们建议您可以直接修改子集内容时，在最后重新给 `data` 赋值即可。
+
+即：
+
+```js
+// 添加数据
+this.data[0].children.push(somedata);
+
+// 最后重新赋值，以确保数据更新
+this.data = [...this.data];
+```
+
+这样的方式适用于所有针对层级数据的**增、删、改**，同时您并不需要担心所有数据都会重新渲染。在 JGantt 内部，我们会检查数据的变动，确保只更新有更改的内容。
+
+当然，如果是修改顶层内容时，可以直接修改而不需要重新赋值，不用担心会出现上面的情况。
+:::
 
 ### data-index* <Badge text="required" type="error"/>
 
