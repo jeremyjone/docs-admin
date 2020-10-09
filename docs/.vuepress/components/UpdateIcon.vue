@@ -1,14 +1,17 @@
 <template>
-  <div class="update-icon">
-    Update
-  </div>
+  <div class="update-icon">Update {{ v ? `v${v}` : "" }}</div>
 </template>
 
 <script>
 export default {
   name: "UpdateIcon",
 
-  props: {},
+  props: {
+    v: {
+      type: String,
+      default: ""
+    }
+  },
 
   beforeCreate() {},
 

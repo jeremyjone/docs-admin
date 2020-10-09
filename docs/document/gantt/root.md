@@ -1,6 +1,6 @@
 # 根组件 JGantt
 
-<Description author="jeremyjone" date="2020-09-02" copyright="jeremyjone" />
+<Description author="jeremyjone" date="2020-10-09" copyright="jeremyjone" />
 
 对于 `JGantt` 组件，它具有非常丰富的属性。
 
@@ -98,6 +98,18 @@ this.data = [...this.data];
 设置整体内容区域内部的边框颜色，它只负责例如表格中间的边框、甘特区域的每日分割线等边框颜色。
 
 它接收任意颜色参数，包括符合 html 规范的颜色英文，16 进制颜色描述（**注意 `#` 符号不可缺少**），或者 `rgb()` 样式的内容，它只要是字符串格式即可。
+
+#### hoverColor <UpdateIcon v=0.0.7 />
+
+<DataParameter t="String" d="#ccc" />
+
+设置悬停行颜色。接收一个HEX颜色值，英文无效。
+
+#### selectColor <UpdateIcon v=0.0.7 />
+
+<DataParameter t="String" d="#123456" />
+
+设置悬停行颜色。接收一个HEX颜色值，英文无效。
 
 #### textColor
 
