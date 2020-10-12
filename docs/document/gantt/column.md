@@ -1,6 +1,6 @@
 # 列组件 JGanttColumn
 
-<Description author="jeremyjone" date="2020-09-02" copyright="jeremyjone" />
+<Description author="jeremyjone" date="2020-10-12" copyright="jeremyjone" />
 
 因为我们在内部已经将其加载，所以您并不需要显示的再次导入到您的组件中就可以使用。
 
@@ -25,6 +25,12 @@
 <img :src="$withBase('/assets/gantt/column-basic.png')" alt="column-basic">
 
 ## 属性
+
+### center <UpdateIcon v=0.0.8 />
+
+<DataParameter t="Boolean" d="false" />
+
+可以控制当前列的内容居中，默认居左。
 
 ### date-format
 

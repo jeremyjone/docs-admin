@@ -249,7 +249,7 @@ this.data = [...this.data];
 
 <DataParameter t="function(data)" />
 
-- data: 更新后的数据内容
+- data: 更新后的数据内容，Object
 
 移动甘特行滑块后的事件。
 
@@ -258,7 +258,7 @@ this.data = [...this.data];
 <DataParameter t="function(state, data)" />
 
 - state: 选中状态，true | false
-- data: 选中的数据内容
+- data: 选中的数据内容，Object
 
 选择复选框时触发的事件。
 
@@ -266,15 +266,21 @@ this.data = [...this.data];
 
 <DataParameter t="function(data)" />
 
-- data: 行数据内容
+- data: 行数据内容，Object | null
 
 单击行元素时触发的事件。
+
+::: tip
+当您选择了一行内容，并且在外部更新了数据，使得该条数据被删除，则会触发一个选择 `null` 的事件。
+
+这样做的好处是您不必担心在外部再次调用该无效内容。
+:::
 
 ### row-dbl-click
 
 <DataParameter t="function(data)" />
 
-- data: 行数据内容
+- data: 行数据内容，Object
 
 双击行元素时触发的事件。
 
