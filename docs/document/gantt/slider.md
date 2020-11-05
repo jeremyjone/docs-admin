@@ -1,6 +1,6 @@
 # 滑块组件 JGanttSlider
 
-<Description author="jeremyjone" date="2020-09-02" copyright="jeremyjone" />
+<Description author="jeremyjone" date="2020-11-05" copyright="jeremyjone" />
 
 因为我们在内部已经将其加载，所以您并不需要显示的再次导入到您的组件中就可以使用。
 
@@ -119,6 +119,8 @@
 
 ## 插槽
 
+### default
+
 滑块组件内部允许您插入任何内容，同时它会抛出当前行的数据以供您使用。
 
 一个简单的示例：
@@ -135,5 +137,68 @@
   </template>
 </j-gantt-slider>
 ```
+
+### content <UpdateIcon v=0.0.13 />
+
+有时候，可能需要重新定义滑块样式，那么这个插槽一定适合您。它会使用您提供的插槽来替换默认滑块，而不是像默认滑块内部插入内容。
+
+一个简单的示例：
+
+```html
+<JGanttSlider
+  flat
+  label="startDate"
+  bg-color="orange"
+>
+  <template v-slot:content="data">
+    <div
+      style="background-color: #123456;display: flex;justify-content: center;height:5px"
+    >
+      {{ data.name }} - {{ data.index }}
+    </div>
+  </template>
+</JGanttSlider>
+```
+
+### left <UpdateIcon v=0.0.13 />
+
+当您重新定义了滑块的样式，那么侧边的滑动块一定也不符合现有的需求，所以我们提供了重载左右滑动块的插槽。通常情况下，它与 `content` 应该配套使用。
+
+一个简单的示例：
+
+<JGanttSlider
+  flat
+  label="startDate"
+  bg-color="orange"
+  :move="true"
+  :resize-left="true"
+  :resize-right="true"
+  :linked-resize="true"
+>
+  <template v-slot:content="data">
+    <div
+      style="background-color: #123456;display: flex;justify-content: center;height:5px"
+    >
+      {{ data.name }} - {{ data.index }}
+    </div>
+  </template>
+
+  <template v-slot:left>
+    <div style="background-color:#123456;width:5px;height:10px" />
+  </template>
+
+  <template v-slot:right>
+    <div style="background-color:#123456;width:5px;height:10px" />
+  </template>
+</JGanttSlider>
+```
+
+### right <UpdateIcon v=0.0.13 />
+
+它的功能与 `left` 插槽一致，不再赘述。
+
+上述示例的效果如下：
+
+<img :src="$withBase('/assets/gantt/slider-content.png')" alt="slider-content">
 
 恭喜您，您现在已经可以完全自定义属于您的甘特图组件了。
