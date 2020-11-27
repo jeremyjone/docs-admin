@@ -141,6 +141,16 @@ this.data = [...this.data];
 
 是否显示甘特表整体的边框，默认为 1，0 为不显示。
 
+### dark <UpdateIcon v=0.0.15 />
+
+<DataParameter t="Boolean" d="false" />
+
+黑暗模式，它会修改页面的背景颜色、文字颜色和边框颜色。
+
+::: warning 请注意
+它是默认属性，只会调整默认值。如果您设置了自定义的样式，该方案则不会生效。
+:::
+
 ### header-height
 
 <DataParameter t="Number | String" d="100" />
@@ -286,6 +296,32 @@ this.data = [...this.data];
 
 ## 插槽
 
-根组件不支持插入自定义内容，因为内部会将所有插入的内容全部过滤掉，只保留内置的两个插槽，`列组件` 和 `滑块组件`。
+根组件不支持插入默认内容，它仅仅支持如下的具名插槽或者我们提供的子组件。
+
+### settings <UpdateIcon v=0.0.15 />
+
+*我不知道这个插槽是否真正需要，但还是把它添加了。*
+
+这个插槽会允许您在设置抽屉中添加任意内容。
+
+使用方式：
+
+```html
+<template v-slot:settings>
+  <div>
+    <!-- any element -->
+  </div>
+</template>
+```
+
+### 列组件
+
+参见 [列组件](./column.html)
+
+### 滑块组件
+
+参见 [滑块组件](./slider.html)
+
+---
 
 接下来，您将深入学习使用这两个组件。
