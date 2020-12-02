@@ -1,6 +1,6 @@
 # 根组件 JGantt
 
-<Description author="jeremyjone" date="2020-10-09" copyright="jeremyjone" />
+<Description author="jeremyjone" date="2020-12-02" copyright="jeremyjone" />
 
 对于 `JGantt` 组件，它具有非常丰富的属性。
 
@@ -247,17 +247,17 @@ this.data = [...this.data];
 
 设置是否显示甘特图中的 `周末` 时间线。
 
-## 方法
+## 事件
 
 ### no-today-error
 
-<DataParameter t="function()" />
+<DataParameter f="@no-today-error -> function()" />
 
 点击 `跳转到今日` 按钮时，`今日` 不在当前甘特范围内所触发的异常，可以接收该异常并自定义后续事件。
 
 ### move-slider
 
-<DataParameter t="function(data)" />
+<DataParameter f="@move-slider -> function(data)" />
 
 - data: 更新后的数据内容，Object
 
@@ -265,7 +265,7 @@ this.data = [...this.data];
 
 ### row-checked
 
-<DataParameter t="function(state, data)" />
+<DataParameter f="@row-checked -> function(state, data)" />
 
 - state: 选中状态，true | false
 - data: 选中的数据内容，Object
@@ -274,7 +274,7 @@ this.data = [...this.data];
 
 ### row-click
 
-<DataParameter t="function(data)" />
+<DataParameter f="@row-click -> function(data)" />
 
 - data: 行数据内容，Object | null
 
@@ -288,11 +288,23 @@ this.data = [...this.data];
 
 ### row-dbl-click
 
-<DataParameter t="function(data)" />
+<DataParameter f="@dbl-click -> function(data)" />
 
 - data: 行数据内容，Object
 
 双击行元素时触发的事件。
+
+## 方法
+
+### setSelected <UpdateIcon v=0.0.16 />
+
+<DataParameter f="setSelected: (data: any) => void" />
+
+允许向组件设置选择项，它会渲染该项内容为已选择状态。
+
+::: tip
+参数 `data` 应该是数据列表中的某一个元素。
+:::
 
 ## 插槽
 

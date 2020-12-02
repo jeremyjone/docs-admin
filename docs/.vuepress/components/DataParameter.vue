@@ -6,8 +6,9 @@
         <span class="param-required">*required*</span><span>,</span>
       </span>
       <!-- 下面两个 span 不要换行 -->
-      <span>type: {{ t }}</span><span v-if="d">,</span>
+      <span v-if="t">type: {{ t }}</span><span v-if="d">,</span>
       <span v-if="d">default: {{ d }}</span>
+      <span v-if="f">{{ f }}</span>
     </span>
   </div>
 </template>
@@ -30,6 +31,11 @@ export default {
 
     // default
     d: {
+      type: String
+    },
+
+    // function
+    f: {
       type: String
     }
   }

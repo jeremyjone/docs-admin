@@ -1,6 +1,6 @@
 # 入门
 
-<Description author="jeremyjone" version="0.0.15" date="2020-11-27" copyright="jeremyjone" />
+<Description author="jeremyjone" version="0.0.16" date="2020-12-02" copyright="jeremyjone" />
 
 通过入门的章节内容，可以快速引入并使用 JzGantt。
 
@@ -70,9 +70,8 @@ const dataList = [
 那么只需要在 `html` 中简单的使用 JzGantt，即可创建一个甘特内容：
 
 ```html{2}
-<j-gantt
-    data-index="index" <!-- 请确保它存在 -->
-    :data="dataList" />
+<j-gantt data-index="index" <!-- 请确保它存在 -->
+  :data="dataList" />
 </j-gantt>
 ```
 
@@ -84,15 +83,29 @@ const dataList = [
 
 如果它正常显示，请继续深入学习其他属性，以便更好的适应您的页面。
 
+## 支持 TypeScript
+
+JGantt 已经有了完整的 TypeScript 类型声明文件，如果您需要，只需要在使用中通过：
+
+```js
+import { JGantt, JGanttColumn, JGanttSlider } from "jz-gantt";
+```
+
+按需导入即可。
+
 ## 更新日志
 
 ::: tip
-您可以跳过此内容以继续深入学习具体配置JGantt。
+您可以跳过此内容以继续深入学习具体配置 JGantt。
 :::
+
+### Release 0.0.16
+
+- 添加了一个方法 `setSelected`，用于设置一条选中的项。
+- 修正了一些样式问题。
 
 ### Release 0.0.15
 
 - 添加了一个 `settings` 的具名插槽，可以向设置抽屉插入自定义内容。
 - 添加了一个 `dark` 属性，适配黑暗模式。
 - 调整了表头的格式。
-

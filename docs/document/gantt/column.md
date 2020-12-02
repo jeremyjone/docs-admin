@@ -60,7 +60,7 @@
 
 ### merge
 
-<DataParameter t="Function | Boolean" d="false" />
+<DataParameter t="(data) => boolean | Boolean" d="false" />
 
 设置当前列是否需要与前一列合并。您可以给出一个 Boolean 值或者一个返回 Boolean 值的函数。
 
