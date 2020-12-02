@@ -99,15 +99,7 @@ function getStandardSideBar() {
     {
       title: "代码编写规范",
       collapsable: false,
-      children: [
-        "",
-        "csharp",
-        "css",
-        "html",
-        "javascript",
-        "python",
-        "vue"
-      ]
+      children: ["", "csharp", "css", "html", "javascript", "python", "vue"]
     }
   ];
 }
@@ -132,17 +124,28 @@ function getDocumentSideBar() {
     {
       title: "JzGantt 组件使用文档",
       collapsable: true,
-      children: ["gantt/", "gantt/root", "gantt/column", "gantt/slider", "gantt/common"]
+      children: [
+        "gantt/",
+        "gantt/root",
+        "gantt/column",
+        "gantt/slider",
+        "gantt/common"
+      ]
     }
-  ]
+  ];
 }
 
 function GetCodesSideBar() {
   return [
+    // {
+    //   title: "代码库",
+    //   collapsable: true,
+    //   children: [""]
+    // },
     {
-      title: "代码库",
-      collapsable: false,
-      children: [""]
+      title: "JavaScript方法",
+      collapsable: true,
+      children: ["js/", "js/create", "js/judge", "js/date", "js/colors"]
     }
-  ]
+  ];
 }

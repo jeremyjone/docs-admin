@@ -15,8 +15,8 @@ cssclassName 应当使用 `小写 + “-”` 连接符进行拼接。
 
 ```scss
 #header-menu {
-font-size: 20px;
-background-color: #0ff;
+  font-size: 20px;
+  background-color: #0ff;
 }
 ```
 
