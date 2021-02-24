@@ -122,6 +122,18 @@ function getDocumentSideBar() {
       children: ["vim"]
     },
     {
+      title: "持续学习路线",
+      collapsable: true,
+      children: [
+        "roadmap/",
+        "roadmap/dotnetcore",
+        "roadmap/java",
+        "roadmap/react",
+        "roadmap/flutter",
+        "roadmap/android",
+      ]
+    },
+    {
       title: "JzGantt 组件使用文档",
       collapsable: true,
       children: [
