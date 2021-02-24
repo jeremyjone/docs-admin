@@ -25,8 +25,7 @@ export default {
 
     // type
     t: {
-      type: String,
-      required: true
+      type: String
     },
 
     // default
