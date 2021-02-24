@@ -1,4 +1,4 @@
-# 处理日期类
+# 处理日期方法
 
 ## 判断日期
 
@@ -115,10 +115,26 @@ export function getDateInterval(startDate, endDate) {
 /**
  * 格式化时间
  * @param {Date | String | Number} date 日期对象，或一个日期字符串，对其进行格式化
- * @param {String} fmt 格式文本，y:年，q:季度，M:月，d:日，H:小时，m:分钟，s:秒，S:毫秒。例：`yyyy-MM-dd`
- * @return {String} 格式化的内容，
+ * @param {String} fmt 格式文本，y:年，q:季度，M:月，d:日，D:星期，H:小时，m:分钟，s:秒，S:毫秒。例：`yyyy-MM-dd`
+ * @param {String} lang 显示星期的文本，中文或者英文
+ * @return {String} 格式化的内容
  */
-export function formatDate(date, fmt = "yyyy-MM-dd") {
+export function formatDate(date, fmt = "yyyy-MM-dd", lang = "zh") {
+  const WEEK = {
+    zh: ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"],
+    en: [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ]
+  };
+
+  if (["zh", "en"].indexOf(lang) === -1) lang = "zh";
+
   date = createDate(date);
 
   var o = {
@@ -131,17 +147,23 @@ export function formatDate(date, fmt = "yyyy-MM-dd") {
     "q+": Math.floor((date.getMonth() + 3) / 3), //季度
     S: date.getMilliseconds() //毫秒
   };
-  if (/(y+)/.test(fmt))
-    fmt = fmt.replace(
-      RegExp.$1,
-      (date.getFullYear() + "").substr(4 - RegExp.$1.length)
-    );
   for (var k in o)
     if (new RegExp("(" + k + ")").test(fmt))
       fmt = fmt.replace(
         RegExp.$1,
         RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length)
       );
+
+  // 年份
+  if (/(y+)/.test(fmt))
+    fmt = fmt.replace(
+      RegExp.$1,
+      (date.getFullYear() + "").substr(4 - RegExp.$1.length)
+    );
+  // 星期
+  if (/(D+)/.test(fmt)) {
+    fmt = fmt.replace(RegExp.$1, WEEK[lang][date.getDay()]);
+  }
   return fmt;
 }
 ```

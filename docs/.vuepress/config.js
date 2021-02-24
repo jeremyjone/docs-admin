@@ -145,7 +145,15 @@ function GetCodesSideBar() {
     {
       title: "JavaScript方法",
       collapsable: true,
-      children: ["js/", "js/create", "js/judge", "js/date", "js/colors"]
+      children: [
+        "js/",
+        "js/array",
+        "js/create",
+        "js/judge",
+        "js/date",
+        "js/colors",
+        "js/html"
+      ]
     }
   ];
 }

@@ -1,4 +1,4 @@
-# 生成类
+# 生成方法
 
 一些生成、创建的方法。
 
@@ -35,6 +35,18 @@ function uuid(len, radix = 16) {
 
   return uuid.join("");
 }
+```
+
+## 生成指定范围内的随机数
+
+```js
+export const random = (min, max) => {
+  if (arguments.length === 2) {
+    return Math.floor(min + Math.random() * (max + 1 - min));
+  } else {
+    return null;
+  }
+};
 ```
 
 ## base64 转 文件
