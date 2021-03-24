@@ -17,9 +17,15 @@ module.exports = {
     // 导航链接
     nav: [
       { text: "首页", link: "/" },
-      { text: "代码编写规范", link: "/standard/" },
-      { text: "文档手册", link: "/document/" },
-      { text: "代码库", link: "/codes/" },
+      {
+        text: "代码相关",
+        ariaLabel: "代码相关菜单",
+        items: [
+          { text: "代码编写规范", link: "/standard/" },
+          { text: "代码库", link: "/codes/" }
+        ]
+      },
+      { text: "文档手册", ariaLabel: "文档手册菜单", link: "/document/" },
 
       // 外部链接
       { text: "我的博客站", link: "https://jeremyjone.com", target: "_blank" },
@@ -52,7 +58,7 @@ module.exports = {
     sidebar: {
       "/standard/": getStandardSideBar(),
       "/document/": getDocumentSideBar(),
-      "/codes/": GetCodesSideBar()
+      "/codes/": getCodesSideBar()
     },
 
     // 禁用搜索
@@ -96,76 +102,87 @@ module.exports = {
 
 function getStandardSideBar() {
   return [
-    {
-      title: "代码编写规范",
-      collapsable: false,
-      children: ["", "csharp", "css", "html", "javascript", "python", "vue"]
-    }
+    // {
+    //   title: "代码编写规范",
+    //   collapsable: false,
+    //   children: ["", "csharp", "css", "html", "javascript", "python", "vue"]
+    // }
+    _GetSubSideBar(
+      "代码编写规范",
+      "",
+      ["", "csharp", "css", "html", "javascript", "python", "vue"],
+      false
+    )
   ];
 }
 
 function getDocumentSideBar() {
   return [
-    {
-      title: "Git 使用文档",
-      collapsable: true,
-      children: ["git"]
-    },
-    {
-      title: "Markdown 使用文档",
-      collapsable: true,
-      children: ["markdown"]
-    },
-    {
-      title: "Vim 使用文档",
-      collapsable: true,
-      children: ["vim"]
-    },
-    {
-      title: "持续学习路线",
-      collapsable: true,
-      children: [
-        "roadmap/",
-        "roadmap/dotnetcore",
-        "roadmap/java",
-        "roadmap/react",
-        "roadmap/flutter",
-        "roadmap/android",
-      ]
-    },
-    {
-      title: "JzGantt 组件使用文档",
-      collapsable: true,
-      children: [
-        "gantt/",
-        "gantt/root",
-        "gantt/column",
-        "gantt/slider",
-        "gantt/common"
-      ]
-    }
+    _GetSubSideBar("Git 使用文档", "", ["git"]),
+    _GetSubSideBar("Markdown 使用文档", "", ["markdown"]),
+    _GetSubSideBar("Vim 使用文档", "", ["vim"]),
+    _GetSubSideBar("持续学习路线", "", [
+      "roadmap/",
+      {
+        title: ".NET 学习之路",
+        collapsable: true,
+        children: ["roadmap/dotnetcore/"]
+          .concat(
+            _GetSubSideBar("认证与授权", "roadmap/dotnetcore/auth", [
+              "",
+              "jwt",
+              "is4",
+              _GetSubSideBar(
+                "IS4 的高级使用",
+                "roadmap/dotnetcore/auth/is4advanced",
+                ["useef"]
+              )
+            ])
+          )
+          .concat(
+            _GetSubSideBar("日志", "roadmap/dotnetcore/log", ["Serilog"])
+          )
+      },
+      "roadmap/java",
+      "roadmap/react",
+      "roadmap/flutter",
+      "roadmap/android"
+    ]),
+    _GetSubSideBar("JzGantt 组件使用文档", "gantt", [
+      "",
+      "root",
+      "column",
+      "slider",
+      "common"
+    ])
   ];
 }
 
-function GetCodesSideBar() {
+function getCodesSideBar() {
   return [
     // {
     //   title: "代码库",
     //   collapsable: true,
     //   children: [""]
     // },
-    {
-      title: "JavaScript方法",
-      collapsable: true,
-      children: [
-        "js/",
-        "js/array",
-        "js/create",
-        "js/judge",
-        "js/date",
-        "js/colors",
-        "js/html"
-      ]
-    }
+    _GetSubSideBar("JavaScript方法", "js", [
+      "",
+      "array",
+      "create",
+      "judge",
+      "date",
+      "colors",
+      "html"
+    ])
   ];
+}
+
+function _GetSubSideBar(title, path, name, collapsable = true) {
+  if (path === "") path = ".";
+
+  return {
+    title,
+    collapsable: collapsable,
+    children: name.map(n => (typeof n === "string" ? `${path}/${n}` : n))
+  };
 }

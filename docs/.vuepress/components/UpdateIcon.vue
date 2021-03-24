@@ -11,31 +11,7 @@ export default {
       type: String,
       default: ""
     }
-  },
-
-  beforeCreate() {},
-
-  created() {},
-
-  beforeMount() {},
-
-  mounted() {},
-
-  beforeDestroy() {},
-
-  destroyed() {},
-
-  data() {
-    return {};
-  },
-
-  computed: {},
-
-  watch: {},
-
-  methods: {},
-
-  components: {}
+  }
 };
 </script>
 
