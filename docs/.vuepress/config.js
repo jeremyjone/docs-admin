@@ -126,7 +126,7 @@ function getDocumentSideBar() {
       {
         title: ".NET 学习之路",
         collapsable: true,
-        children: ["roadmap/dotnetcore/"]
+        children: ["roadmap/dotnetcore/", "roadmap/dotnetcore/basic"]
           .concat(
             _GetSubSideBar("认证与授权", "roadmap/dotnetcore/auth", [
               "",
@@ -135,13 +135,11 @@ function getDocumentSideBar() {
               _GetSubSideBar(
                 "IS4 的高级使用",
                 "roadmap/dotnetcore/auth/is4advanced",
-                ["useef"]
+                ["useef", "external-account"]
               )
             ])
           )
-          .concat(
-            _GetSubSideBar("日志", "roadmap/dotnetcore/log", ["Serilog"])
-          )
+          .concat(_GetSubSideBar("日志", "roadmap/dotnetcore/log", ["Serilog"]))
       },
       "roadmap/java",
       "roadmap/react",
