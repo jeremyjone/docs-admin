@@ -30,9 +30,11 @@ Microsoft.AspNetCore.Identity.EntityFrameworkCore（3.1.5）
 Pomelo.EntityFrameworkCore.MySql（3.1.1）
 ```
 
-> 注意：截至 2021.3.20，Pomelo.EntityFrameworkCore.MySql 不支持 Net5（想尝鲜可以使用 alpha-5 版本），项目是 net core 3.1 的，对应的 Pomelo.EntityFrameworkCore.MySql 使用的是 3.1.1 版本，对应的 Microsoft.EntityFrameworkCore.Tools 也应该是 3.x 版本。
+::: warning 注意
+截至 2021.3.20，Pomelo.EntityFrameworkCore.MySql 不支持 Net5（想尝鲜可以使用 alpha-5 版本），项目是 net core 3.1 的，对应的 Pomelo.EntityFrameworkCore.MySql 使用的是 3.1.1 版本，对应的 Microsoft.EntityFrameworkCore.Tools 也应该是 3.x 版本。
+:::
 
-::: tip
+::: tip 提示
 本配置为 MySQL，如果使用其他数据库，请自行下载。
 :::
 

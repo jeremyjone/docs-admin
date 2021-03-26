@@ -131,11 +131,10 @@ function getDocumentSideBar() {
             _GetSubSideBar("认证与授权", "roadmap/dotnetcore/auth", [
               "",
               "jwt",
-              "is4",
               _GetSubSideBar(
-                "IS4 的高级使用",
-                "roadmap/dotnetcore/auth/is4advanced",
-                ["useef", "external-account"]
+                "IdentityServer4",
+                "roadmap/dotnetcore/auth/is4",
+                ["", "useef", "external-account"]
               )
             ])
           )
