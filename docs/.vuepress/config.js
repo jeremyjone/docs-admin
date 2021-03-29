@@ -126,19 +126,35 @@ function getDocumentSideBar() {
       {
         title: ".NET 学习之路",
         collapsable: true,
-        children: ["roadmap/dotnetcore/", "roadmap/dotnetcore/basic"]
-          .concat(
-            _GetSubSideBar("认证与授权", "roadmap/dotnetcore/auth", [
+        children: [
+          "roadmap/dotnetcore/",
+          "roadmap/dotnetcore/basic",
+          _GetSubSideBar("依赖注入", "roadmap/dotnetcore/di", [
+            "",
+            "lifetimes",
+            "collections"
+          ]),
+          _GetSubSideBar("数据库", "roadmap/dotnetcore/db", [
+            "",
+            _GetSubSideBar(
+              "Entity Framework Core",
+              "roadmap/dotnetcore/db/efcore",
+              ["", "context", "model", "manage", "use"]
+            ),
+            "other"
+          ]),
+          _GetSubSideBar("认证与授权", "roadmap/dotnetcore/auth", [
+            "",
+            "example",
+            "jwt",
+            _GetSubSideBar("IdentityServer4", "roadmap/dotnetcore/auth/is4", [
               "",
-              "jwt",
-              _GetSubSideBar(
-                "IdentityServer4",
-                "roadmap/dotnetcore/auth/is4",
-                ["", "useef", "external-account"]
-              )
+              "useef",
+              "external-account"
             ])
-          )
-          .concat(_GetSubSideBar("日志", "roadmap/dotnetcore/log", ["Serilog"]))
+          ]),
+          _GetSubSideBar("日志", "roadmap/dotnetcore/log", ["Serilog"])
+        ]
       },
       "roadmap/java",
       "roadmap/react",
