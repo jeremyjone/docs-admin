@@ -143,6 +143,10 @@ function getDocumentSideBar() {
             ),
             "other"
           ]),
+          _GetSubSideBar("对象映射", "roadmap/dotnetcore/mapper", [
+            "",
+            "automapper"
+          ]),
           _GetSubSideBar("认证与授权", "roadmap/dotnetcore/auth", [
             "",
             "example",
