@@ -94,7 +94,7 @@ public class User
     /// <summary>
     /// 用户所在部门
     /// </summary>
-    public int DepartId { get; set; }
+    public int DepartmentId { get; set; }
 }
 ```
 
@@ -168,7 +168,7 @@ private static void Main(string[] args)
     db.Add(new User
     {
         Id = 1,
-        DepartId = 1,
+        DepartmentId = 1,
         Username = "jeremyjone",
         Nickname = "Jeremy Jone"
     });
@@ -184,7 +184,7 @@ private static void Main(string[] args)
     var user = db.Users.FirstOrDefault();
     if (user != null)
     {
-        var department = db.Departments.FirstOrDefault(x => x.Id == user.DepartId);
+        var department = db.Departments.FirstOrDefault(x => x.Id == user.DepartmentId);
         if (department == null)
         {
             Console.WriteLine("部门为空");

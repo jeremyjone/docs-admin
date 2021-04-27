@@ -35,7 +35,7 @@ public class User
     /// <summary>
     /// 用户所在部门
     /// </summary>
-    public int DepartId { get; set; }
+    public int DepartmentId { get; set; }
 
     /// <summary>
     /// 用户的生日

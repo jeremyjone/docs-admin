@@ -17,7 +17,7 @@ using (var db = new UserDbContext())
     var user2 = db.Users.Single(u => u.Id == 1);
 
     // 获取指定条件的用户
-    var users2 = db.Users.Where(u => u.DepartId == 1).ToList();
+    var users2 = db.Users.Where(u => u.DepartmentId == 1).ToList();
 }
 ```
 
@@ -29,16 +29,35 @@ Entity Framework Core 允许你在模型中使用导航属性来加载相关实�
 
 预先加载表示从数据库中加载关联数据，作为初始查询的一部分。可以使用 `Include` 方法来指定要包含在查询结果中的关联数据。
 
-```csharp{4}
-using (var db = new UserDbContext())
+这个方法对于关联数据的查询非常有用，直接通过例子演示。
+
+```csharp{13}
+public class Data
 {
-    var users = db.Users
-        .Include(u => Username)
+    public int Id { get; set; }
+    public string Name { get; set; }
+    // 下面是外键格式，关联创建者
+    public int CreatorId { get; set; }
+    public virtual User Creator { get; set; }
+}
+
+using (var db = new DbContext())
+{
+    var data = db.Data
+        .Include(d => d.Creator)
         .ToList();
 }
 ```
 
-进而还可以使用 `ThenInclude` 来进一步获取更深一层的关联数据。也可以将多个级别和多个根的关联数据合并到一起进行查询 [参考](https://docs.microsoft.com/zh-cn/ef/core/querying/related-data/eager#including-multiple-levels)。
+上面例子中，通过 `Include` 可以一次性获得相关的创建者信息，而不需要进行二次查询，这极大方便了我们的查询效率。
+
+如果有多个关联属性，可以并联使用 `Include` 方法连续获取。进而还可以使用 `ThenInclude` 来进一步获取通过 `Include` 获取到的对象中更深一层的关联数据。比如：
+
+```csharp
+var data = db.Data.Include(d => d.Creator).ThenInclude(c => c.Department).ToList();
+```
+
+也可以将多个级别和多个根的关联数据合并到一起进行查询 [参考](https://docs.microsoft.com/zh-cn/ef/core/querying/related-data/eager#including-multiple-levels)。
 
 #### 显式加载
 
@@ -72,7 +91,7 @@ using (var db = new UserDbContext())
     var user = new User
     {
         Id = 1,
-        DepartId = 1,
+        DepartmentId = 1,
         Username = "jeremyjone",
         Nickname = "Jeremy Jone"
     };
