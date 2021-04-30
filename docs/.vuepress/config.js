@@ -7,6 +7,22 @@ module.exports = {
 
   base: "/docs/",
 
+  head: [
+    ["link", { rel: "icon", href: "/assets/img/logo.png" }],
+    [
+      "script",
+      {
+        src: "https://cdn.jsdelivr.net/npm/darkreader@4.9.32/darkreader.min.js",
+      }
+    ],
+    [
+      "script",
+      {
+        src: "/js/base.js",
+      }
+    ]
+  ],
+
   themeConfig: {
     // 网站logo
     logo: "/assets/img/logo.png",
