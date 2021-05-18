@@ -170,7 +170,8 @@ function getDocumentSideBar() {
             _GetSubSideBar("IdentityServer4", "roadmap/dotnetcore/auth/is4", [
               "",
               "useef",
-              "external-account"
+              "external-account",
+              "intro-config"
             ])
           ]),
           _GetSubSideBar("日志", "roadmap/dotnetcore/log", ["Serilog"])

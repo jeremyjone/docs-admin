@@ -132,6 +132,10 @@ public static class Config
 }
 ```
 
+::: tip 提示
+这是基本配置，更多配置，请参考 [详解配置](./intro-config)
+:::
+
 ### 配置服务
 
 在 `Startup.cs` 中配置 IS4 的服务。
