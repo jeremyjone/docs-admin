@@ -12,13 +12,13 @@ module.exports = {
     [
       "script",
       {
-        src: "https://cdn.jsdelivr.net/npm/darkreader@4.9.32/darkreader.min.js",
+        src: "https://cdn.jsdelivr.net/npm/darkreader@4.9.32/darkreader.min.js"
       }
     ],
     [
       "script",
       {
-        src: "/js/base.js",
+        src: "/js/base.js"
       }
     ]
   ],
@@ -173,6 +173,11 @@ function getDocumentSideBar() {
               "external-account",
               "intro-config"
             ])
+          ]),
+          _GetSubSideBar("缓存", "roadmap/dotnetcore/cache", [
+            "",
+            "memory",
+            "distributed"
           ]),
           _GetSubSideBar("日志", "roadmap/dotnetcore/log", ["Serilog"])
         ]
