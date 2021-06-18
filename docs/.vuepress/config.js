@@ -179,7 +179,7 @@ function getDocumentSideBar() {
             "memory",
             "distributed"
           ]),
-          _GetSubSideBar("日志", "roadmap/dotnetcore/log", ["Serilog"]),
+          _GetSubSideBar("日志", "roadmap/dotnetcore/log", ["Serilog", "APM"]),
           _GetSubSideBar("Swagger 文档", "roadmap/dotnetcore/swagger", [""])
         ]
       },
