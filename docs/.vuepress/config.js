@@ -180,7 +180,10 @@ function getDocumentSideBar() {
             "distributed"
           ]),
           _GetSubSideBar("日志", "roadmap/dotnetcore/log", ["Serilog", "APM"]),
-          _GetSubSideBar("Swagger 文档", "roadmap/dotnetcore/swagger", [""])
+          _GetSubSideBar("Swagger 文档", "roadmap/dotnetcore/swagger", [""]),
+          _GetSubSideBar("微服务", "roadmap/dotnetcore/microservice", [
+            _GetSubSideBar("RabbitMQ", "roadmap/dotnetcore/microservice/mq", ["RabbitMQ"])
+          ]),
         ]
       },
       "roadmap/java",
